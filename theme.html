@@ -23,11 +23,9 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
     <link rel="stylesheet" href="http://static.tumblr.com/thpaaos/DIcklyl4z/reset.css" type="text/css">
 
-
     <style type="text/css" media="screen">
     body {
-      font-family: Georgia,Times,serif;
-      font-size: 15px;
+      font: 15px/1.5 Georgia, Times, serif;
       background-color: #E5E5E5;
     }
 
@@ -36,11 +34,6 @@
       text-transform: uppercase;
       letter-spacing: 2.5px;
       padding: 3em 0 1em;
-    }
-
-    h1 a {
-      text-decoration: none;
-      color: #000;
     }
 
     h2 {
@@ -73,18 +66,6 @@
       font-size: 83.33%;
     }
 
-    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-      color: #000;
-    }
-
-    h3 a.link {
-      color: #CC3300;
-    }
-
-    h3 a.link:hover {
-      color: #000;
-    }
-
     em {
       font-style: italic;
     }
@@ -94,7 +75,7 @@
     }
 
     blockquote {
-      margin-left: 1em;
+      margin: 1em;
       padding-left: 1em;
       border-left: 3px solid #CCC;
       color: #404040;
@@ -103,13 +84,42 @@
     ol, ul {
       margin-bottom: 1em;
     }
-    
+
     ol li, ul li {
       margin: 0.5em 0;
     }
 
     p {
       margin-bottom: 1em;
+    }
+
+    a {
+      color: #CC3300;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+
+    a:hover {
+      color: #000;
+    }
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+      color: #000;
+    }
+
+    h1 a {
+      text-decoration: none;
+    }
+
+    h3 a.link {
+      color: #CC3300;
+      text-decoration: underline;
+    }
+
+    h3 a.link:hover {
+      color: #000;
     }
 
     p.byline {
@@ -136,7 +146,6 @@
       padding-left: 4px;
       width: 540px;
       float: left;
-      line-height: 1.5;
       letter-spacing: 0.45px;
     }
 
@@ -195,7 +204,7 @@
     }
     
     div.post {
-      margin-bottom: 4em;
+      margin-bottom: 3em;
       border-bottom: 1px solid #555;
     }
 
@@ -218,6 +227,7 @@
     table.chat td.name {
       padding: 0.25em 1em 0.25em .25em;
       border-right: 1px solid #AAA;
+      text-transform: lowercase;
       font-variant: small-caps;
     }
 
@@ -258,19 +268,11 @@
     ol.notes blockquote a {
       text-decoration: none;
     }
-    
+
     span.pagination {
       float: right;
     }
-    
-    a {
-      color: #CC3300;
-    }
 
-    a:hover {
-      color: #000;
-    }
-    
     div.quote {
       font-size: 113.33%;
       margin-bottom: 1em;
@@ -280,14 +282,36 @@
       color: #000;
       font-size: 83.33%;
     }
-    
-    div.caption a {
-      color: #000;
-    }
 
     div.caption span.dash {
       color: #999;
     }
+
+    div.author {
+      margin: 1.5em 2.5em;
+      font-size: 83.33%;
+      color: #777;
+    }
+
+    div.author a {
+      color: #777;
+      text-decoration: none;
+    }
+
+    div.author:hover {
+      color: #666;
+    }
+
+    div.author:hover a {
+      color: #666;
+      background-color: #FCFF8B;
+    }
+
+    p.byline a,
+    div.index_pagination a {
+      text-decoration: none;
+    }
+
     </style>
 
     <script type="text/javascript">
@@ -307,8 +331,13 @@
 
     <div class="content_wrapper">
       <div class="sidebar">
-        <h1><a href="/">{Title}</a></h1>
-        {block:Description}<h2>{Description}</h2>{/block:Description}
+        <h1>
+          <a href="/">{Title}</a>
+        </h1>
+
+        {block:Description}
+          <h2>{Description}</h2>
+        {/block:Description}
       </div>
 
       <div class="content_outer_wrapper">
@@ -318,13 +347,10 @@
             {block:Posts}
 
             <div class="post">
-              {block:Text}<div class="label post_label">Post</div>{/block:Text}
-              {block:Photo}<div class="label photo_label">Photo</div>{/block:Photo}
-              {block:Link}<div class="label link_label">Link</div>{/block:Link}
-              {block:Chat}<div class="label chat_label">Chat</div>{/block:Chat}
-              {block:Quote}<div class="label quote_label">Quote</div>{/block:Quote}
 
               {block:Text}
+                <div class="label post_label">Post</div>
+
                 {block:Title}
                   <h3><a href="{Permalink}">{Title}</a></h3>
                 {/block:Title}
@@ -333,16 +359,20 @@
               {/block:Text}
 
               {block:Photo}
+                <div class="label photo_label">Photo</div>
+  
                 {LinkOpenTag}<img src="{PhotoURL-500}" class="media" alt="{PhotoAlt}" />{LinkCloseTag}
                 {block:HighRes}<a href="{PhotoURL-HighRes}" target="_blank"></a>{/block:HighRes}
                 {block:Caption}
                   <div class="caption">
                     {Caption}
                   </div>
-                {block:Caption}
+                {/block:Caption}
               {/block:Photo}
 
               {block:Link}
+                <div class="label link_label">Link</div>
+
                 <h3>
                   <a href="{URL}" class="link" target="{Target}">{Name}</a>
                 </h3>
@@ -351,21 +381,29 @@
                   <div class="caption">
                     <p>{Description}</p>
                   </div>
-                {block:Description}
+                {/block:Description}
               {/block:Link}
 
               {block:Chat}
+                <div class="label chat_label">Chat</div>
+
                 {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
                 <table class="chat">
                   {block:Lines}
                   <tr>
-                    {block:Label}<td class="name line{UserNumber}">{Label}</td>{block:Label}<td class="words line{UserNumber}">{Line}</td>
+                    {block:Label}
+                      <td class="name line{UserNumber}">{Label}</td>
+                    {/block:Label}
+
+                    <td class="words line{UserNumber}">{Line}</td>
                   </tr>
                   {/block:Lines}
                 </table>
               {/block:Chat}
 
               {block:Quote}
+                <div class="label quote_label">Quote</div>
+
                 <div class="quote">"{Quote}"</div>
 
                 {block:Source}
@@ -390,7 +428,7 @@
                   {12Hour}:{Minutes} {AmPm}
 
                   {block:NoteCount}
-                     &middot; <a href="{Permalink}#notes">{NoteCount} {lang:Notes}</a>
+                     &middot; <a href="{Permalink}#notes">{NoteCount} Notes</a>
                   {/block:NoteCount}
 
                   {block:IndexPage}
@@ -411,16 +449,22 @@
             {/block:Posts}
           </div>
 
-          <div class="pagination">
             {block:Pagination}
-              {block:PreviousPage}<a href="{PreviousPage}" class="previous_page">View newer posts</a>&nbsp;&nbsp;&nbsp;{/block:PreviousPage}
-              {block:NextPage}<a href="{NextPage}" class="next_page">View older posts</a>{/block:NextPage}
+              <div class="index_pagination">
+                {block:PreviousPage}<a href="{PreviousPage}" class="previous_page">Next »</a>&nbsp;&nbsp;&nbsp;{/block:PreviousPage}
+                {block:NextPage}<a href="{NextPage}" class="next_page">« Prev</a>{/block:NextPage}
+              </div>
             {/block:Pagination}
-          </div>
         </div>
       </div>
 
       <div class="clearfix">&nbsp;</div>
+    </div>
+
+    <div class="author">
+      <a href="http://github.com/drtangible/flcnrs-tumblr-theme">Flcnrs</a> by 
+      <a href="http://www.drtangible.com">Dan Gilbert</a>, living on
+      <a href="http://www.tumblr.com">Tumblr</a>.
     </div>
   </body>
 </html>
