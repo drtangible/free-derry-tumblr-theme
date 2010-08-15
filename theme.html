@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>{text:HTML Title} {block:PostSummary} » {PostSummary}{/block:PostSummary}</title>
+
+    <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{PostSummary}{/block:PermalinkPage}" />
+    <meta name="author" content="Falconeers">
+
+    <meta name="text:Google Analytics ID" content="" />
+    <meta name="text:HTML Title" content="" />
+
+    <script src="http://static.tumblr.com/kgp8cdy/ntgl70rfq/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="http://static.tumblr.com/kgp8cdy/aWIl70rez/jquery.randomrotate.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("div.label").randomRotate({ 'from' : -4, 'to' : 4 });
+      });
+    </script>
+
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    <link rel="stylesheet" href="http://static.tumblr.com/thpaaos/DIcklyl4z/reset.css" type="text/css">
+
+
+    <style type="text/css" media="screen">
+    body {
+      font-family: Georgia,Times,serif;
+      font-size: 15px;
+      background-color: #E5E5E5;
+    }
+
+    h1 {
+      font-size: 113.33%;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      padding: 3em 0 1em;
+    }
+
+    h1 a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    h2 {
+      text-transform: lowercase;
+      font-variant: small-caps;
+      font-size: 83.33%;
+      letter-spacing: 1px;
+    }
+    
+    h3 {
+      font-size: 173.33%;
+      margin-bottom: 1em;
+      letter-spacing: -1px;
+      line-height: 1.25;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 {
+      font-size: 143.33%;
+    }
+
+    h5 {
+      font-size: 113.33%;   
+    }
+
+    h6 {
+      font-size: 83.33%;
+    }
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+      color: #000;
+    }
+
+    h3 a.link {
+      color: #CC3300;
+    }
+
+    h3 a.link:hover {
+      color: #000;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      margin-left: 1em;
+      padding-left: 1em;
+      border-left: 3px solid #CCC;
+      color: #404040;
+    }
+
+    ol, ul {
+      margin-bottom: 1em;
+    }
+    
+    ol li, ul li {
+      margin: 0.5em 0;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    p.byline {
+      color: #444;
+      font-size: 75%;
+    }
+
+    .sidebar {
+      width: 280px;
+      float: left;
+      padding: 0 2em;
+      margin-right: .25em;
+      line-height: 1.35;
+    }
+
+    .content {
+      padding: 3em 0 2em 2em;
+      border-left: 1px solid #555;
+      min-height: 768px;
+    }
+
+    .content_outer_wrapper {
+      border-left: 1px solid #555;
+      padding-left: 4px;
+      width: 540px;
+      float: left;
+      line-height: 1.5;
+      letter-spacing: 0.45px;
+    }
+
+    .content_wrapper {
+      margin-left: 2em;
+      width: 930px;
+      clear: both;
+      background-color: #FFF;
+      -moz-box-shadow: 4px 4px 12px #999;
+      -webkit-box-shadow: 4px 4px 12px #999;
+    }
+
+    .clearfix {
+      clear: both;
+    }
+
+    .label {
+      width: 8em;
+      background: rgba(0, 0, 255, .7);
+      float: right;
+      margin-left: 2em;
+      margin-right: -11.25em;
+      font-family: "Trebuchet MS";
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #FFF;
+      font-size: 87%;
+      padding: 0.5em 0;
+      text-align: center;
+      z-index: -9999;
+    }
+
+    .post_label {
+      background-color: #B0CD4C;
+      background-color: rgba(133, 167, 28, 0.8);
+    }
+
+    .photo_label {
+      background-color: #4CB1A8;
+      background-color: rgba(50, 124, 112, 0.8);
+    }
+
+    .link_label {
+      background-color: #F3DE60;
+      background-color: rgba(226, 197, 46, 0.8);
+    }
+
+    .chat_label {
+      background-color: #EE874C;
+      background-color: rgba(204, 74, 27, 0.8);
+    }
+    
+    .quote_label {
+      background-color: #8A4C87;
+      background-color: rgba(63, 13, 65, 0.8);
+    }
+    
+    div.post {
+      margin-bottom: 4em;
+      border-bottom: 1px solid #555;
+    }
+
+    table.chat {
+      margin-bottom: 1em;
+    }
+
+    table.chat td.words.line1, table.chat td.name.line1 {
+      background-color: #DDD;
+    }
+
+    table.chat td.words.line2, table.chat td.name.line2 {
+      background-color: #FFF;
+    }
+
+    table.chat td.words.line3, table.chat td.name.line3 {
+      background-color: #EEE;
+    }
+
+    table.chat td.name {
+      padding: 0.25em 1em 0.25em .25em;
+      border-right: 1px solid #AAA;
+      font-variant: small-caps;
+    }
+
+    table.chat td.words {
+      padding: 0.25em 0.5em;
+      margin-bottom: 1em;
+    }
+
+    ol.notes {
+      margin: 1em 0;
+      font-size: 13px;
+      list-style-type: none;
+    }
+
+    ol.notes li {
+      padding: 0.5em 0;
+      border-bottom: 1px solid #CCC;
+    }
+
+    ol.notes li:first-child {
+      border-top: 1px solid #CCC;
+    }
+
+    ol.notes img.avatar {
+      display: none;
+    }
+
+    ol.notes a { 
+      color: #000;
+    }
+
+    ol.notes blockquote {
+      margin: 0.5em 0;
+      padding: 0 1em;
+      color: #000;
+    }
+
+    ol.notes blockquote a {
+      text-decoration: none;
+    }
+    
+    span.pagination {
+      float: right;
+    }
+    
+    a {
+      color: #CC3300;
+    }
+
+    a:hover {
+      color: #000;
+    }
+    
+    div.quote {
+      font-size: 113.33%;
+      margin-bottom: 1em;
+    }
+
+    div.caption {
+      color: #000;
+      font-size: 83.33%;
+    }
+    
+    div.caption a {
+      color: #000;
+    }
+
+    div.caption span.dash {
+      color: #999;
+    }
+    </style>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{Text:Google Analytics ID}']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <div class="content_wrapper">
+      <div class="sidebar">
+        <h1><a href="/">{Title}</a></h1>
+        {block:Description}<h2>{Description}</h2>{/block:Description}
+      </div>
+
+      <div class="content_outer_wrapper">
+        <div class="content">
+
+          <div class="posts">
+            {block:Posts}
+
+            <div class="post">
+              {block:Text}<div class="label post_label">Post</div>{/block:Text}
+              {block:Photo}<div class="label photo_label">Photo</div>{/block:Photo}
+              {block:Link}<div class="label link_label">Link</div>{/block:Link}
+              {block:Chat}<div class="label chat_label">Chat</div>{/block:Chat}
+              {block:Quote}<div class="label quote_label">Quote</div>{/block:Quote}
+
+              {block:Text}
+                {block:Title}
+                  <h3><a href="{Permalink}">{Title}</a></h3>
+                {/block:Title}
+
+                {Body}
+              {/block:Text}
+
+              {block:Photo}
+                {LinkOpenTag}<img src="{PhotoURL-500}" class="media" alt="{PhotoAlt}" />{LinkCloseTag}
+                {block:HighRes}<a href="{PhotoURL-HighRes}" target="_blank"></a>{/block:HighRes}
+                {block:Caption}
+                  <div class="caption">
+                    {Caption}
+                  </div>
+                {block:Caption}
+              {/block:Photo}
+
+              {block:Link}
+                <h3>
+                  <a href="{URL}" class="link" target="{Target}">{Name}</a>
+                </h3>
+
+                {block:Description}
+                  <div class="caption">
+                    <p>{Description}</p>
+                  </div>
+                {block:Description}
+              {/block:Link}
+
+              {block:Chat}
+                {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+                <table class="chat">
+                  {block:Lines}
+                  <tr>
+                    {block:Label}<td class="name line{UserNumber}">{Label}</td>{block:Label}<td class="words line{UserNumber}">{Line}</td>
+                  </tr>
+                  {/block:Lines}
+                </table>
+              {/block:Chat}
+
+              {block:Quote}
+                <div class="quote">"{Quote}"</div>
+
+                {block:Source}
+                  <div class="caption">
+                    <p>
+                      <span class="dash">&mdash;</span>
+                      {Source}
+                    </p>
+                  </div>
+                {/block:Source}
+              {/block:Quote}
+
+              {block:PermalinkPage}
+                <section id="notes">
+                  {PostNotes}
+                </section>
+              {/block:PermalinkPage}
+
+              <p class="byline">
+                {block:Date}
+                  {Month} {DayOfMonth}, {Year} &middot;
+                  {12Hour}:{Minutes} {AmPm}
+
+                  {block:NoteCount}
+                     &middot; <a href="{Permalink}#notes">{NoteCount} {lang:Notes}</a>
+                  {/block:NoteCount}
+
+                  {block:IndexPage}
+                      &middot; <a href="{Permalink}">Permalink</a>
+                  {/block:IndexPage}
+
+                  {block:PermalinkPagination}
+                    <span class="pagination">
+                      {block:PreviousPost}<a href="{PreviousPost}" class="previous_page">« Prev</a>&nbsp;{/block:PreviousPost}
+                      {block:NextPost}<a href="{NextPost}" class="next_page">Next »</a>{/block:NextPost}
+                    </span>
+                  {/block:PermalinkPagination}
+
+                {/block:Date}
+              </p>
+            </div>
+
+            {/block:Posts}
+          </div>
+
+          <div class="pagination">
+            {block:Pagination}
+              {block:PreviousPage}<a href="{PreviousPage}" class="previous_page">View newer posts</a>&nbsp;&nbsp;&nbsp;{/block:PreviousPage}
+              {block:NextPage}<a href="{NextPage}" class="next_page">View older posts</a>{/block:NextPage}
+            {/block:Pagination}
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix">&nbsp;</div>
+    </div>
+  </body>
+</html>
