@@ -205,12 +205,22 @@
       background-color: #EE874C;
       background-color: rgba(204, 74, 27, 0.8);
     }
-    
+
     .quote_label {
       background-color: #8A4C87;
       background-color: rgba(63, 13, 65, 0.8);
     }
-    
+
+    .video_label {
+      background-color: #79A07E;
+      background-color: rgba(121, 160, 126, 0.8);
+    }
+
+    .audio_label {
+      background-color: #B1FAA5;
+      background-color: rgba(172, 255, 178, 0.8);
+    }
+
     div.post {
       margin-bottom: 3em;
       border-bottom: 1px solid {color:Separator};
@@ -310,7 +320,7 @@
       text-decoration: none;
     }
     
-    div.photo_wrapper {
+    div.photo_wrapper, div.audio_wrapper {
       margin-bottom: 1.75em;
     }
 
@@ -367,6 +377,7 @@
                   {LinkOpenTag}<img src="{PhotoURL-500}" class="media" alt="{PhotoAlt}" />{LinkCloseTag}
                   {block:HighRes}<a href="{PhotoURL-HighRes}" target="_blank"></a>{/block:HighRes}
                 </div>
+
                 {block:Caption}
                   <div class="caption">
                     {Caption}
@@ -419,6 +430,34 @@
                   </div>
                 {/block:Source}
               {/block:Quote}
+
+              {block:Video}
+                <div class="label video_label">Video</div>
+
+                <div class="video_wrapper">
+                    {Video-500}
+                </div>
+
+                {block:Caption}
+                  <div class="caption">
+                    {Caption}
+                  </div>
+                {/block:Caption}
+              {/block:Video}
+
+              {block:Audio}
+                  <div class="label audio_label">Audio</div>
+
+                  <div class="audio_wrapper">
+                      {AudioPlayerGrey}
+                  </div>
+
+                  {block:Caption}
+                      <div class="caption">
+                        {Caption}
+                      </div>
+                  {/block:Caption}
+              {/block:Audio}
 
               {block:PermalinkPage}
                 <section id="notes">
