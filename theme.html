@@ -363,16 +363,25 @@
           <a href="/">{Title}</a>
         </h1>
 
-        {block:Description}
-          <h2 class="description">{Description}</h2>
-        {/block:Description}
+        {block:IndexPage}
+          {block:Description}
+            <h2 class="description">{Description}</h2>
+          {/block:Description}
 
-        {block:AskEnabled}
+          {block:AskEnabled}
+            <h2 class="description">
+              {text:Ask Intro}
+              <a href="/ask">{AskLabel}</a>.
+            </h2>
+          {/block:AskEnabled}
+        {/block:IndexPage}
+        
+        {block:PermalinkPage}
           <h2 class="description">
-            {text:Ask Intro}
-            <a href="/ask">{AskLabel}</a>.
+            <a href="/">&laquo; Return to all posts</a>
           </h2>
-        {/block:AskEnabled}
+        {/block:PermalinkPage}
+
       </div>
 
       <div class="content_outer_wrapper">
@@ -383,7 +392,10 @@
 
             <div class="post">
               {block:Text}
-                <div class="label post_label">Post</div>
+                {block:IndexPage}
+                  <div class="label post_label">Post</div>
+                {/block:IndexPage}
+                
 
                 {block:Title}
                   <h3><a href="{Permalink}">{Title}</a></h3>
@@ -393,7 +405,9 @@
               {/block:Text}
 
               {block:Photo}
-                <div class="label photo_label">Photo</div>
+                {block:IndexPage}
+                  <div class="label photo_label">Photo</div>
+                {/block:IndexPage}
  
                 <div class="photo_wrapper">
                   {LinkOpenTag}<img src="{PhotoURL-500}" class="media" alt="{PhotoAlt}" />{LinkCloseTag}
@@ -408,10 +422,12 @@
               {/block:Photo}
 
               {block:Link}
-                <div class="label link_label">Link</div>
+                {block:IndexPage}
+                  <div class="label link_label">Link</div>
+                {/block:IndexPage}
 
                 <h3>
-                  <a href="{URL}" class="link" target="{Target}">{Name}</a>
+                  <a href="{URL}" class="link" {Target}>{Name}</a>
                 </h3>
 
                 {block:Description}
@@ -422,7 +438,9 @@
               {/block:Link}
 
               {block:Chat}
-                <div class="label chat_label">Chat</div>
+                {block:IndexPage}
+                  <div class="label chat_label">Chat</div>
+                {/block:IndexPage}
 
                 {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
                 <table class="chat">
@@ -439,7 +457,9 @@
               {/block:Chat}
 
               {block:Quote}
-                <div class="label quote_label">Quote</div>
+                {block:IndexPage}
+                  <div class="label quote_label">Quote</div>
+                {/block:IndexPage}
 
                 <h3 class="quote">&#8220;{Quote}&#8221;</h3>
 
@@ -454,7 +474,9 @@
               {/block:Quote}
 
               {block:Video}
-                <div class="label video_label">Video</div>
+                {block:IndexPage}
+                  <div class="label video_label">Video</div>
+                {/block:IndexPage}
 
                 <div class="video_wrapper">
                     {Video-500}
@@ -468,21 +490,25 @@
               {/block:Video}
 
               {block:Audio}
+                {block:IndexPage}
                   <div class="label audio_label">Audio</div>
+                {/block:IndexPage}
 
-                  <div class="audio_wrapper">
-                      {AudioPlayerGrey}
-                  </div>
+                <div class="audio_wrapper">
+                    {AudioPlayerGrey}
+                </div>
 
-                  {block:Caption}
-                      <div class="caption">
-                        {Caption}
-                      </div>
-                  {/block:Caption}
+                {block:Caption}
+                    <div class="caption">
+                      {Caption}
+                    </div>
+                {/block:Caption}
               {/block:Audio}
 
               {block:Answer}
-                <div class="label answer_label">Q&amp;A</div>
+                {block:IndexPage}
+                  <div class="label answer_label">Q&amp;A</div>
+                {/block:IndexPage}
 
                 <div class="asker">
                   <img src="{AskerPortraitURL-16}" /> {asker} asked:
