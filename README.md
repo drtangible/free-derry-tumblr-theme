@@ -7,3 +7,6 @@ Supports a limited set of Tumblr post types.
 * Link
 * Chat
 * Quote
+* Audio
+* Video
+* Answers
