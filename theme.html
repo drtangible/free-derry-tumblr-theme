@@ -10,6 +10,7 @@
 
     <meta name="text:Google Analytics ID" content="" />
     <meta name="text:HTML Title" content="" />
+    <meta name="text:Ask Intro" content="Have a question?">
 
     <meta name="color:Background" content="#E5E5E5">
     <meta name="color:Content Background" content="#FFFFFF">
@@ -53,6 +54,7 @@
       letter-spacing: 1px;
       text-transform: lowercase;
       font-variant: small-caps;
+      margin-bottom: 1em;
     }
 
     h3 {
@@ -359,6 +361,13 @@
         {block:Description}
           <h2 class="description">{Description}</h2>
         {/block:Description}
+
+        {block:AskEnabled}
+          <h2 class="description">
+            {text:Ask Intro}
+            <a href="/ask">{AskLabel}</a>.
+          </h2>
+        {/block:AskEnabled}
       </div>
 
       <div class="content_outer_wrapper">
