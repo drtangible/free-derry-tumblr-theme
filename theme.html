@@ -217,8 +217,13 @@
     }
 
     .audio_label {
-      background-color: #B1FAA5;
-      background-color: rgba(172, 255, 178, 0.8);
+      background-color: #515F5C;
+      background-color: rgba(97, 115, 112, 0.8);
+    }
+
+    .answer_label {
+      background-color: #89E832;
+      background-color: rgba(137, 232, 50, 0.8);
     }
 
     div.post {
@@ -320,10 +325,14 @@
       text-decoration: none;
     }
     
-    div.photo_wrapper, div.audio_wrapper {
+    div.photo_wrapper, div.audio_wrapper, div.answer_wrapper {
       margin-bottom: 1.75em;
     }
 
+    div.asker img {
+      vertical-align: middle;
+      margin-right: 0.25em;
+    }
     </style>
 
     <script type="text/javascript">
@@ -359,7 +368,6 @@
             {block:Posts}
 
             <div class="post">
-
               {block:Text}
                 <div class="label post_label">Post</div>
 
@@ -458,6 +466,24 @@
                       </div>
                   {/block:Caption}
               {/block:Audio}
+
+              {block:Answer}
+                <div class="label answer_label">Q&amp;A</div>
+
+                <div class="asker">
+                  <img src="{AskerPortraitURL-16}" /> {asker} asked:
+                </div>
+
+                <p>
+                  <blockquote>
+                    {Question}
+                  </blockquote>
+                </p>
+
+                <div class="answer_wrapper">
+                    <div class="answer">{Answer}</div>
+                </div>
+              {/block:Answer}
 
               {block:PermalinkPage}
                 <section id="notes">
