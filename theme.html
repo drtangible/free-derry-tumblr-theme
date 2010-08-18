@@ -5,13 +5,17 @@
 
     <title>{text:HTML Title} {block:PostSummary} » {PostSummary}{/block:PostSummary}</title>
 
-    <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{PostSummary}{/block:PermalinkPage}" />
-    <meta name="author" content="Falconeers">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    <link rel="shortcut icon" href="{Favicon}">
 
+    {block:Description}
+      <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+
+    <meta name="author" content="Dan Gilbert">
     <meta name="text:Google Analytics ID" content="" />
     <meta name="text:HTML Title" content="" />
     <meta name="text:Ask Intro" content="Have a question?">
-
     <meta name="color:Background" content="#E5E5E5">
     <meta name="color:Content Background" content="#FFFFFF">
     <meta name="color:Secondary Content Background" content="#CCCCCC">
@@ -33,7 +37,6 @@
       });
     </script>
 
-    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
     <link rel="stylesheet" href="http://static.tumblr.com/thpaaos/DIcklyl4z/reset.css" type="text/css">
 
     <style type="text/css" media="screen">
@@ -335,6 +338,8 @@
       vertical-align: middle;
       margin-right: 0.25em;
     }
+
+    {CustomCSS}
     </style>
 
     <script type="text/javascript">
