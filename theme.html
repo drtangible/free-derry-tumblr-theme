@@ -152,7 +152,7 @@
     }
 
     .content {
-      padding: 3em 0 2em 2em;
+      padding: 3em 0 2em 2.65em;
       min-height: 52em;
     }
 
@@ -330,7 +330,7 @@
       text-decoration: none;
     }
     
-    div.photo_wrapper, div.audio_wrapper, div.answer_wrapper {
+    div.photo_wrapper, div.audio_wrapper, div.answer_wrapper, div.video_wrapper {
       margin-bottom: 1.75em;
     }
 
@@ -511,7 +511,7 @@
                   {12Hour}:{Minutes} {AmPm}
 
                   {block:NoteCount}
-                     &middot; <a href="{Permalink}#notes">{NoteCount} Notes</a>
+                     &middot; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                   {/block:NoteCount}
 
                   {block:IndexPage}
