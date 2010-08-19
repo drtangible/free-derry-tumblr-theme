@@ -19,7 +19,7 @@
     <meta name="color:Background" content="#E5E5E5">
     <meta name="color:Content Background" content="#FFFFFF">
     <meta name="color:Secondary Content Background" content="#CCCCCC">
-    <meta name="color:Separator" content="#444444">
+    <meta name="color:Separator" content="#AAAAAA">
     <meta name="color:Link" content="#CC3300">
     <meta name="color:Main Copy" content="#000000">
     <meta name="color:Secondary Copy" content="#444444">
@@ -40,306 +40,339 @@
     <link rel="stylesheet" href="http://static.tumblr.com/thpaaos/DIcklyl4z/reset.css" type="text/css">
 
     <style type="text/css" media="screen">
-    body {
-      font: 15px/1.5 Georgia, Times, serif;
-      background-color: {color:Background};
-    }
 
-    h1 {
-      font-size: 113.33%;
-      letter-spacing: 2.5px;
-      padding: 3em 0 1em;
-      text-transform: uppercase;
-    }
+      /*** GENERAL ********************/
 
-    h2 {
-      font-size: 83.33%;
-      letter-spacing: 1px;
-      text-transform: lowercase;
-      font-variant: small-caps;
-      margin-bottom: 1em;
-    }
+      body {
+        background-color: {color:Background};
+        font: 15px/1.5 Georgia, Times, serif;
+      }
 
-    h3 {
-      font-size: 173.33%;
-      margin-bottom: 1em;
-      letter-spacing: -1px;
-      line-height: 1.25;
-    }
+      em {
+        font-style: italic;
+      }
 
-    h4 {
-      font-size: 143.33%;
-    }
+      strong {
+        font-weight: bold;
+      }
 
-    h5 {
-      font-size: 113.33%;   
-    }
+      blockquote {
+        border-left: 3px solid {color:Secondary Content Background};
+        color: {color:Secondary Copy};
+        margin: 1em;
+        padding-left: 1em;
+      }
 
-    h6 {
-      font-size: 83.33%;
-    }
+      ol, ul {
+        margin-bottom: 1em;
+      }
 
-    em {
-      font-style: italic;
-    }
+      ol li, ul li {
+        margin: 0.5em 0;
+      }
 
-    strong {
-      font-weight: bold;
-    }
+      p {
+        margin-bottom: 1em;
+      }
 
-    blockquote {
-      color: {color:Secondary Copy};
-      border-left: 3px solid {color:Secondary Content Background};
-      padding-left: 1em;
-      margin: 1em;
-    }
 
-    ol, ul {
-      margin-bottom: 1em;
-    }
+      /*** HEADERS *********************/
 
-    ol li, ul li {
-      margin: 0.5em 0;
-    }
+      h1 {
+        font-size: 113.33%;
+        letter-spacing: 2.5px;
+        padding: 3em 0 1em;
+        text-transform: uppercase;
+      }
 
-    p {
-      margin-bottom: 1em;
-    }
+      h2 {
+        font-size: 83.33%;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+        margin-bottom: 1em;
+        text-transform: lowercase;
+      }
 
-    a {
-      color: {color:Link};
-      -webkit-transition: all 0.3s ease-out;
-      -moz-transition: all 0.3s ease-out;
-      -o-transition: all 0.3s ease-out;
-      transition: all 0.3s ease-out;
-    }
+      h3 {
+        font-size: 173.33%;
+        letter-spacing: -1px;
+        line-height: 1.25;
+        margin-bottom: 1em;
+      }
 
-    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, a:hover {
-      color: {color:Main Copy};
-    }
+      h4 {
+        font-size: 143.33%;
+      }
 
-    h1 a, h2 a, h3 a {
-      text-decoration: none;
-    }
+      h5 {
+        font-size: 113.33%;   
+      }
 
-    h3 a.link {
-      color: {color:Link};
-      text-decoration: underline;
-    }
+      h6 {
+        font-size: 83.33%;
+      }
 
-    h3 a.link:hover, h2.description a:hover {
-      color: {color:Main Copy;};
-    }
+      /*** LINKS ***********************/
 
-    h2.description a {
-      color: {color:Link};
-    }
+      a {
+        color: {color:Link};
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
 
-    p.byline {
-      color: {color:Secondary Copy};
-      font-size: 75%;
-    }
+      h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, a:hover {
+        color: {color:Main Copy};
+      }
 
-    .sidebar {
-      width: 18em;
-      padding: 0 2em;
-      line-height: 1.35;
-      float: left;
-    }
+      h1 a, h2 a, h3 a {
+        text-decoration: none;
+      }
 
-    .content, .content_outer_wrapper {
-      border-left: 1px solid {color:Separator};
-    }
+      h3 a.link {
+        color: {color:Link};
+        text-decoration: underline;
+      }
 
-    .content {
-      padding: 3em 0 2em 2.65em;
-      min-height: 52em;
-    }
+      h3 a.link:hover, h2.description a:hover {
+        color: {color:Main Copy;};
+      }
 
-    .content_outer_wrapper {
-      padding-left: 4px;
-      width: 540px;
-      float: left;
-      letter-spacing: 0.45px;
-    }
+      h2.description a {
+        color: {color:Link};
+      }
 
-    .content_wrapper {
-      background-color: {color:Content Background};
-      -moz-box-shadow: 4px 4px 12px {color:Shadow};
-      -webkit-box-shadow: 4px 4px 12px {color:Shadow};
+      /*** LAYOUT **********************/
 
-      margin-left: 2em;
-      width: 930px;
-      clear: both;
-    }
+      .sidebar {
+        float: left;
+        line-height: 1.35;
+        padding: 0 2em;
+        width: 18em;
+      }
 
-    .clearfix {
-      clear: both;
-    }
+      .content, .content_outer_wrapper {
+        border-left: 1px solid {color:Separator};
+      }
 
-    .label {
-      font: 87% "Trebuchet MS", Tahoma, Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
-      color: #FFFFFF;
-      width: 8em;
-      padding: 0.5em 0;
-      margin: 0 -12em 0 2em;
-      float: right;
-      text-align: center;
-      position: relative;
-      z-index: -9999;
-    }
+      .content {
+        min-height: 52em;
+        padding: 3em 0 2em 2.65em;
+      }
 
-    .post_label {
-      background-color: #B0CD4C;
-      background-color: rgba(133, 167, 28, 0.8);
-    }
+      .content_outer_wrapper {
+        float: left;
+        letter-spacing: 0.45px;
+        padding-left: 4px;
+        width: 540px;
+      }
 
-    .photo_label {
-      background-color: #4CB1A8;
-      background-color: rgba(50, 124, 112, 0.8);
-    }
+      .content_wrapper {
+        -moz-box-shadow: 4px 4px 12px {color:Shadow};
+        -webkit-box-shadow: 4px 4px 12px {color:Shadow};
+        background-color: {color:Content Background};
+        clear: both;
+        margin-left: 2em;
+        width: 930px;
+      }
 
-    .link_label {
-      background-color: #F3DE60;
-      background-color: rgba(226, 197, 46, 0.8);
-    }
+      div.clearfix {
+        clear: both;
+      }
 
-    .chat_label {
-      background-color: #EE874C;
-      background-color: rgba(204, 74, 27, 0.8);
-    }
 
-    .quote_label {
-      background-color: #8A4C87;
-      background-color: rgba(63, 13, 65, 0.8);
-    }
+      /*** PAGINATION ****************/
+      
+      span.pagination {
+        float: right;
+      }
 
-    .video_label {
-      background-color: #79A07E;
-      background-color: rgba(121, 160, 126, 0.8);
-    }
+      div.index_pagination a {
+        text-decoration: none;
+      }
 
-    .audio_label {
-      background-color: #515F5C;
-      background-color: rgba(97, 115, 112, 0.8);
-    }
 
-    .answer_label {
-      background-color: #89E832;
-      background-color: rgba(137, 232, 50, 0.8);
-    }
+      /*** GENERAL POSTS *************/
 
-    div.post {
-      margin-bottom: 3em;
-      border-bottom: 1px solid {color:Separator};
-    }
+      div.post {
+        border-bottom: 1px solid {color:Separator};
+        margin-bottom: 3em;
+      }
 
-    table.chat {
-      margin-bottom: 1em;
-    }
+      p.byline {
+        color: {color:Secondary Copy};
+        font-size: 75%;
+        margin-bottom: 3em 0 0.5em;
+      }
 
-    table.chat td.words.line1, table.chat td.name.line1 {
-      background-color: {color:Chat Background 1};
-    }
+      p.byline a {
+        text-decoration: none;
+      }
 
-    table.chat td.words.line2, table.chat td.name.line2 {
-      background-color: {color:Chat Background 2};
-    }
+      div.photo_wrapper, div.audio_wrapper, p.question_wrapper, div.video_wrapper {
+        margin-bottom: 1.75em;
+      }
 
-    table.chat td.words.line3, table.chat td.name.line3 {
-      background-color: {color:Chat Background 3};
-    }
 
-    table.chat td.name {
-      padding: 0.25em 1em 0.25em .25em;
-      border-right: 1px solid {color:Separator};
-      text-transform: lowercase;
-      font-variant: small-caps;
-    }
+      /*** QUOTE POSTS ***************/
 
-    table.chat td.words {
-      padding: 0.25em 0.5em;
-      margin-bottom: 1em;
-    }
+      div.caption span.dash {
+        color: {color:Separator};
+      }
 
-    ol.notes {
-      margin: 1em 0;
-      font-size: 13px;
-      list-style-type: none;
-    }
 
-    ol.notes li {
-      padding: 0.5em 0;
-      border-bottom: 1px solid {color:Secondary Content Background};
-    }
+      /*** ANSWER POSTS **************/
 
-    ol.notes li:first-child {
-      border-top: 1px solid {color:Secondary Content Background};
-    }
+      p.asker {
+        margin-bottom: 0.5em;
+      }
 
-    ol.notes img.avatar {
-      display: none;
-    }
 
-    ol.notes a { 
-      color: {color:Main Copy};
-    }
+      /*** CHAT POSTS ****************/
 
-    ol.notes blockquote {
-      color: {color:Main Copy};
-      margin: 0.5em 0;
-      padding: 0 1em;
-    }
+      table.chat {
+        margin-bottom: 1em;
+      }
 
-    ol.notes blockquote a {
-      text-decoration: none;
-    }
+      table.chat td.words.line1, table.chat td.name.line1 {
+         background-color: {color:Chat Background 1};
+       }
 
-    span.pagination {
-      float: right;
-    }
+       table.chat td.words.line2, table.chat td.name.line2 {
+         background-color: {color:Chat Background 2};
+       }
 
-    div.caption span.dash {
-      color: {color:Separator};
-    }
+       table.chat td.words.line3, table.chat td.name.line3 {
+         background-color: {color:Chat Background 3};
+       }
 
-    div.author {
-      margin: 1.5em 2.5em;
-      font-size: 83.33%;
-      color: #777777;
-    }
+       table.chat td.name {
+         border-right: 1px solid {color:Separator};
+         font-variant: small-caps;
+         padding: 0.25em 1em 0.25em .25em;
+         text-transform: lowercase;
+       }
 
-    div.author a {
-      color: #777777;
-      text-decoration: none;
-    }
+       table.chat td.words {
+         margin-bottom: 1em;
+         padding: 0.25em 0.5em;
+       }
 
-    div.author:hover {
-      color: #666666;
-    }
 
-    div.author:hover a {
-      color: #666666;
-      background-color: #FCFF8B;
-    }
+      /*** LABELS ********************/
 
-    p.byline a,
-    div.index_pagination a {
-      text-decoration: none;
-    }
-    
-    div.photo_wrapper, div.audio_wrapper, div.answer_wrapper, div.video_wrapper {
-      margin-bottom: 1.75em;
-    }
+      .label {
+        color: #FFFFFF;
+        float: right;
+        font: 87% "Trebuchet MS", Tahoma, Arial, sans-serif;
+        letter-spacing: 0.25em;
+        margin: 0 -12em 0 2em;
+        padding: 0.5em 0;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        width: 8em;
+        z-index: -9999;
+      }
 
-    div.asker img {
-      vertical-align: middle;
-      margin-right: 0.25em;
-    }
+      .label.text_post {
+        background-color: #B0CD4C;
+        background-color: rgba(133, 167, 28, 0.8);
+      }
 
-    {CustomCSS}
+      .label.photo_post {
+        background-color: #4CB1A8;
+        background-color: rgba(50, 124, 112, 0.8);
+      }
+
+      .label.link_post {
+        background-color: #F3DE60;
+        background-color: rgba(226, 197, 46, 0.8);
+      }
+
+      .label.chat_post {
+        background-color: #EE874C;
+        background-color: rgba(204, 74, 27, 0.8);
+      }
+
+      .label.quote_post {
+        background-color: #8A4C87;
+        background-color: rgba(63, 13, 65, 0.8);
+      }
+
+      .label.video_post {
+        background-color: #79A07E;
+        background-color: rgba(121, 160, 126, 0.8);
+      }
+
+      .label.audio_post {
+        background-color: #515F5C;
+        background-color: rgba(97, 115, 112, 0.8);
+      }
+
+      .label.answer_post {
+        background-color: #89E832;
+        background-color: rgba(137, 232, 50, 0.8);
+      }
+
+      /*** NOTES *********************/
+
+      #notes ol.notes {
+        font-size: 13px;
+        list-style-type: none;
+        margin: 1em 0;
+      }
+
+      #notes ol.notes li {
+        border-bottom: 1px solid {color:Secondary Content Background};
+        padding: 0.5em 0;
+      }
+
+      #notes ol.notes li:first-child {
+        border-top: 1px solid {color:Secondary Content Background};
+      }
+
+      #notes ol.notes img.avatar {
+        display: none;
+      }
+
+      #notes ol.notes blockquote {
+        color: {color:Main Copy};
+        margin: 0.5em 0;
+        padding: 0 1em;
+      }
+
+      #notes ol.notes blockquote a {
+        text-decoration: none;
+      }
+
+
+      /*** FOOTER ********************/
+      
+      #footer {
+        color: #777777;
+        font-size: 83.33%;
+        margin: 1.5em 2.5em;
+      }
+
+      #footer a {
+        color: #777777;
+        text-decoration: none;
+      }
+
+      #footer:hover {
+        color: #666666;
+      }
+
+      #footer:hover a {
+        background-color: #FCFF8B;
+        color: #666666;
+      }
+
+      /*** CUSTOM **********************/
+
+      {CustomCSS}
     </style>
 
     <script type="text/javascript">
@@ -355,8 +388,8 @@
       })();
     </script>
   </head>
-  <body>
 
+  <body>
     <div class="content_wrapper">
       <div class="sidebar">
         <h1>
@@ -393,7 +426,7 @@
             <div class="post">
               {block:Text}
                 {block:IndexPage}
-                  <div class="label post_label">Post</div>
+                  <div class="text_post label">Post</div>
                 {/block:IndexPage}
                 
 
@@ -406,7 +439,7 @@
 
               {block:Photo}
                 {block:IndexPage}
-                  <div class="label photo_label">Photo</div>
+                  <div class="photo_post label">Photo</div>
                 {/block:IndexPage}
  
                 <div class="photo_wrapper">
@@ -423,7 +456,7 @@
 
               {block:Link}
                 {block:IndexPage}
-                  <div class="label link_label">Link</div>
+                  <div class="link_post label">Link</div>
                 {/block:IndexPage}
 
                 <h3>
@@ -439,26 +472,28 @@
 
               {block:Chat}
                 {block:IndexPage}
-                  <div class="label chat_label">Chat</div>
+                  <div class="chat_post label">Chat</div>
                 {/block:IndexPage}
 
                 {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
-                <table class="chat">
-                  {block:Lines}
-                  <tr>
-                    {block:Label}
-                      <td class="name line{UserNumber}">{Label}</td>
-                    {/block:Label}
+                <p>
+                  <table class="chat">
+                    {block:Lines}
+                    <tr>
+                      {block:Label}
+                        <td class="name line{UserNumber}">{Label}</td>
+                      {/block:Label}
 
-                    <td class="words line{UserNumber}">{Line}</td>
-                  </tr>
-                  {/block:Lines}
-                </table>
+                      <td class="words line{UserNumber}">{Line}</td>
+                    </tr>
+                    {/block:Lines}
+                  </table>
+                </p>
               {/block:Chat}
 
               {block:Quote}
                 {block:IndexPage}
-                  <div class="label quote_label">Quote</div>
+                  <div class="quote_post label">Quote</div>
                 {/block:IndexPage}
 
                 <h3 class="quote">&#8220;{Quote}&#8221;</h3>
@@ -475,7 +510,7 @@
 
               {block:Video}
                 {block:IndexPage}
-                  <div class="label video_label">Video</div>
+                  <div class="video_post label">Video</div>
                 {/block:IndexPage}
 
                 <div class="video_wrapper">
@@ -491,7 +526,7 @@
 
               {block:Audio}
                 {block:IndexPage}
-                  <div class="label audio_label">Audio</div>
+                  <div class="audio_post label">Audio</div>
                 {/block:IndexPage}
 
                 <div class="audio_wrapper">
@@ -507,28 +542,28 @@
 
               {block:Answer}
                 {block:IndexPage}
-                  <div class="label answer_label">Q&amp;A</div>
+                  <div class="answer_post label">Q&amp;A</div>
                 {/block:IndexPage}
 
-                <div class="asker">
-                  <img src="{AskerPortraitURL-16}" /> {asker} asked:
-                </div>
-
-                <p>
-                  <blockquote>
-                    {Question}
-                  </blockquote>
+                <p class="asker">
+                  {asker} asked,
                 </p>
 
-                <div class="answer_wrapper">
-                    <div class="answer">{Answer}</div>
+                <h3>
+                  &#8220;{Question}&#8221;
+                </h3>
+
+                <div class="answer">
+                  <p>
+                    {Answer}
+                  </p>
                 </div>
               {/block:Answer}
 
               {block:PermalinkPage}
-                <section id="notes">
+                <div id="notes">
                   {PostNotes}
-                </section>
+                </div>
               {/block:PermalinkPage}
 
               <p class="byline">
@@ -570,7 +605,7 @@
       <div class="clearfix">&nbsp;</div>
     </div>
 
-    <div class="author">
+    <div id="footer">
       <a href="http://github.com/drtangible/flcnrs-tumblr-theme">Flcnrs</a> by 
       <a href="http://www.drtangible.com">Dan Gilbert</a>, living on
       <a href="http://www.tumblr.com">Tumblr</a>.
